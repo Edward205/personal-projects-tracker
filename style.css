@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header * {
+    margin: 12px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(94, 188, 255);
+}
+header p {
+    font-style: italic;
+}
+
+main {
+    margin: 12px auto;
+    width: 800px;
+    display: grid;
+    grid-template-columns: 260px auto;
+    gap: 24px;
+    align-items: start;
+}
+
+.panel {
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    padding: 8px;
+}
+.panel label {
+    display: block;
+    padding: 4px 0;
+}
+.panel button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 4px;
+}
+.panel h2 {
+    margin: 8px 4px;
+}
+.panel ul {
+    list-style-type: none;
+    padding: 8px;
+    margin: 0;
+}
+
+.project-item {
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+.project-item h3 {
+    margin: 6px 0;
+}
+.status.active {
+    background-color: green;
+    color: white;
+}
+.status.done {
+    background-color: lightblue;
+}
+.status.dead {
+    background-color: grey;
+    color: white;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personal projects tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+       <h1>Personal Projects Tracker</h1> 
+       <p>Work with your future self</p>
+    </header>
+    <main>
+        <section class="panel add">
+            <h2>Add Project</h2>
+            <form>
+                <label>Title</label>
+                <input type="text" name="title" placeholder="My idea...">
+                <label>Notes</label>
+                <textarea rows="5" cols="30" id="notes"></textarea>
+
+                <label>Status</label>
+                <select>
+                    <option>Done</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                    <option>Stale</option>
+                    <option>Dead</option>
+                </select>
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>My Projects</h2>
+
+            <ul>
+                <li class="project-item">
+                    <div>
+                        <h3>3D game</h3>
+                        <span class="time">2026-09-28 09:50</span>
+                        <span class="description"><p>Made with Unity, uses C#. Working basic character controller. Needs work on levels and gameplay elements.</p></span>
+                    </div>
+                    <span class="status active">Active</span>
+                </li>
+                
+                <li class="project-item">
+                    <div>
+                        <h3>Android app</h3>
+                        <span class="time">2026-09-24 11:30</span>
+                        <span class="description"><p>Published to Google Play Store and Github. Made with Kotlin and Jetpack compose, using modern Android standards and Material 3.</p></span>
+                    </div>
+                    <span class="status done">Done</span>
+                </li>
+
+                <li class="project-item">
+                    <div>
+                        <h3>Online platform</h3>
+                        <span class="time">2026-08-14 12:10</span>
+                        <span class="description"><p>Frontend uses React and the backend is written in Rust.</p></span>
+                    </div>
+                    <span class="status dead">Dead</span>
+                </li>
+
+            </ul>
+
+        </section>
+    </main>
+</body>
