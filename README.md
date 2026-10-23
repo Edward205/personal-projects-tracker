@@ -16,5 +16,8 @@ Plain Javascript which doesn't modify the DOM yet. `index.js` holds the projects
 ## Stage 3: Vite and React
 The app has been moved to `frontend`, it uses React and is built with Vite. The data from Stage 2 has been moved into the main component, and it's printed raw as a placeholder.
 
+## Stage 4: components
+The projects list is now dynamically rendered based on the array of `projects` using `ProjectCard` which represents a single project and `ProjectsList` which renders the list of projects as `ProjectCard`s.
+
 ## AI Usage
 No AI used yet.
