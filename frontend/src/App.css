@@ -69,3 +69,13 @@ main {
     background-color: grey;
     color: white;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        background-color: rgb(50, 50, 50);
+        color: white;
+        header {
+            background-color: rgb(10, 83, 136);
+        }
+    }
+}

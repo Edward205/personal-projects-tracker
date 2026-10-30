@@ -19,5 +19,8 @@ The app has been moved to `frontend`, it uses React and is built with Vite. The 
 ## Stage 4: components
 The projects list is now dynamically rendered based on the array of `projects` using `ProjectCard` which represents a single project and `ProjectsList` which renders the list of projects as `ProjectCard`s.
 
+## Stage 5: editing entries and dark theme
+Project entries can now be deleted and have their status updated. This is done using the React state and handler functions so the counters update automatically. The dark theme can be selected with a button in the header
+
 ## AI Usage
 No AI used yet.

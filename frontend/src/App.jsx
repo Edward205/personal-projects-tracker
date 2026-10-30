@@ -18,11 +18,23 @@ export default function App() {
      ) );
   }
 
+  const [theme, setTheme] = useState(initialTheme);
+  function initialTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function handleTheme() {
+    const updated = theme === "dark" ? "light" : "dark";
+    setTheme(updated);
+    document.documentElement.dataset.theme = updated;
+  }
+
+
   return (
     <>
       <header>
         <h1>Personal Projects Tracker</h1> 
         <p>Work with your future self</p>
+        <button onClick={handleTheme}>Theme</button>
       </header>
       <main>
           <section className="panel add">
