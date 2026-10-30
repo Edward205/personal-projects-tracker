@@ -1,12 +1,22 @@
 import ProjectsList from "./components/ProjectsList";
+import { useState } from "react";
 
+const INITIAL_PROJECTS = [
+  {id: 1, title: "3D game", date: "2026-09-28 09:50", description: "Made with Unity, uses C#. Working basic character controller. Needs work on levels and gameplay elements.", status: "active"},
+  {id: 2, title: "Android app", date: "2026-08-14 12:10", description: "Published to Google Play Store and Github. Made with Kotlin and Jetpack compose, using modern Android standards and Material 3.", status: "done"},
+  {id: 3, title: "Online platform", date: "2026-08-14 12:10", description: "Frontend uses React and the backend is written in Rust.", status: "dead"},
+];
+const STATUSES = ["active", "done", "dead"];
 export default function App() {
-  let projects = [
-    {id: 1, title: "3D game", date: "2026-09-28 09:50", description: "Made with Unity, uses C#. Working basic character controller. Needs work on levels and gameplay elements.", status: "active"},
-    {id: 2, title: "Android app", date: "2026-08-14 12:10", description: "Published to Google Play Store and Github. Made with Kotlin and Jetpack compose, using modern Android standards and Material 3.", status: "done"},
-    {id: 3, title: "Online platform", date: "2026-08-14 12:10", description: "Frontend uses React and the backend is written in Rust.", status: "dead"},
-  ];
-  const STATUSES = ["active", "done", "dead"];
+  const [projects, setProjects] = useState(INITIAL_PROJECTS);  
+  function handleDelete(id) {
+    setProjects((prev) => prev.filter((t) => t.id !== id) );
+  }
+  function handleStatusChange(id, status) {
+    setProjects((prev) => prev.map((element) =>
+        element.id === id ? { ...element, status: status.target.value } : element
+     ) );
+  }
 
   return (
     <>
@@ -35,7 +45,7 @@ export default function App() {
               </form>
           </section>
 
-        <ProjectsList projects={projects} />
+        <ProjectsList projects={projects} onDelete={handleDelete} onStatusChange={handleStatusChange}/>
       </main>
     </>
   );

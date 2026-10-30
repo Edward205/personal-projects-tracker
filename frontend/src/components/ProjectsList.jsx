@@ -1,9 +1,9 @@
 import ProjectCard from "./ProjectCard";
 
-export default function ProjectsList({projects}) {
+export default function ProjectsList({projects, onDelete, onStatusChange}) {
     const active = projects.filter((t) => t.status == "active").length;
     const cards = projects.map(project =>
-        <ProjectCard project={project}/>
+        <ProjectCard project={project} onDelete={onDelete} onStatusChange={onStatusChange} key={project.id}/>
     );
 
     if(projects.length != 0)
