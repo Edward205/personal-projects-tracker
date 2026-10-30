@@ -34,7 +34,7 @@ main {
     display: block;
     padding: 4px 0;
 }
-.panel button {
+.panel.add button {
     width: 100%;
     margin-top: 12px;
     padding: 4px;
@@ -58,16 +58,33 @@ main {
 .project-item h3 {
     margin: 6px 0;
 }
-.status.active {
+
+.status.active * {
     background-color: green;
     color: white;
 }
-.status.done {
+.status.done * {
     background-color: lightblue;
 }
-.status.dead {
+.status.dead * {
     background-color: grey;
     color: white;
+}
+
+.delete {
+    background-color: rgb(219, 105, 105);
+    width: 50px;
+}
+
+.project-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button, select {
+    border-style: solid;
+    border-width: 1px;
 }
 
 @media (prefers-color-scheme: dark) {

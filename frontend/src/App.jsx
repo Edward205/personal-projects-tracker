@@ -32,9 +32,11 @@ export default function App() {
   return (
     <>
       <header>
-        <h1>Personal Projects Tracker</h1> 
-        <p>Work with your future self</p>
-        <button onClick={handleTheme}>Theme</button>
+        <h1>Personal Projects Tracker</h1>
+        <span>
+          Work with your future self
+          <button onClick={handleTheme}>Theme</button>
+        </span>
       </header>
       <main>
           <section className="panel add">
