@@ -1,0 +1,24 @@
+.grid {
+    margin: 12px auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 260px auto;
+    gap: 24px;
+    align-items: start;
+}
+
+.panel {
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    padding: 8px;
+}
+.panel label {
+    display: block;
+    padding: 4px 0;
+}
+.panel.add button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 4px;
+}

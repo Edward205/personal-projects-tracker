@@ -1,0 +1,31 @@
+.projectitem {
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+.projectitem h3 {
+    margin: 6px 0;
+}
+.projectoptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.status.active * {
+    background-color: green;
+    color: white;
+}
+.status.done * {
+    background-color: lightblue;
+}
+.status.dead * {
+    background-color: grey;
+    color: white;
+}
+
+.delete {
+    background-color: rgb(219, 105, 105);
+    width: 50px;
+}
