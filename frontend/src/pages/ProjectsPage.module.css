@@ -22,3 +22,14 @@
     margin-top: 12px;
     padding: 4px;
 }
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: auto;
+    }
+    .panel.add {
+        order: 1;
+        width: 260px;
+        margin: auto;
+    }
+}

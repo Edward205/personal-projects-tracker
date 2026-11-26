@@ -29,14 +29,3 @@ button, select {
         }
     }
 }
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: auto;
-    }
-    .panel.add {
-        order: 1;
-        width: 260px;
-        margin: auto;
-    }
-}
