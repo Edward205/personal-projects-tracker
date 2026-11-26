@@ -1,4 +1,5 @@
 import styles from './ProjectCard.module.css';
+import { Link } from "react-router-dom";
 
 const STATUSES = {active: "active", done: "done", dead: "dead"};
 
@@ -6,7 +7,7 @@ export default function ProjectCard({project, onDelete, onStatusChange}) {
     return (
         <li className={styles.projectitem}>
             <div>
-                <h3>{project.title}</h3>
+                <h3><Link to={`/project/${project.id}`}>{project.title}</Link></h3>
                 <span className="time">{project.time}</span>
                 <span className="description"><p>{project.description}</p></span>
             </div>

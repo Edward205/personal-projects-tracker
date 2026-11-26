@@ -5,7 +5,7 @@ async function request(path, options = {}) {
         headers: { "Content-Type": "application/json", ...options.headers },
     });
     if (!res.ok) {
-        throw new Error(`Eroare server: ${res.status}`);
+        throw new Error(`Server error: ${res.status}`);
     }
     return res.status === 204 ? null : res.json();
 }
@@ -23,4 +23,7 @@ export function updateProject(id, changes) {
 }
 export function deleteProject(id) {
     return request(`/projects/${id}`, { method: "DELETE" });
+}
+export function fetchProject(id) {
+    return request(`/projects/${id}`);
 }

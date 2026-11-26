@@ -39,7 +39,7 @@ export default function ProjectForm({ onAdd }) {
         }
     }
     return (
-        <form className="task-form" onSubmit={handleSubmit} noValidate data-
+        <form className="project-form" onSubmit={handleSubmit} noValidate data-
             testid="form">
 
             <label>Title</label>
