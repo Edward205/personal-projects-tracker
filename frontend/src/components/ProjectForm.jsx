@@ -8,7 +8,7 @@ const STATUSES = [
 const TITLU_MAX = 100;
 export default function ProjectForm({ onAdd }) {
     const [title, setTitle] = useState("");
-    const [notes, setNotes] = useState("");
+    const [description, setDescription] = useState("");
     const [status, setStatus] = useState("active");
     const [eroare, setError] = useState("");
     const [send, setSend] = useState(false);
@@ -28,10 +28,10 @@ export default function ProjectForm({ onAdd }) {
         setError("");
         setSend(true);
         try {
-            await onAdd({ title: title.trim(), notes, status });
+            await onAdd({ title: title.trim(), description, status });
             setTitle("");
             setStatus("active");
-            setNotes("");
+            setDescription("");
         } catch (err) {
             setError(err.message);
         } finally {
@@ -47,8 +47,8 @@ export default function ProjectForm({ onAdd }) {
                 onChange={(e) => setTitle(e.target.value)} maxLength={TITLU_MAX}
                 aria-invalid={Boolean(eroare)}></input>
             <label>Notes</label>
-            <textarea rows="5" cols="30" id="notes" value={notes}
-                onChange={(e) => setNotes(e.target.value)}></textarea>
+            <textarea rows="5" cols="30" id="description" value={description}
+                onChange={(e) => setDescription(e.target.value)}></textarea>
 
             <label>Status</label>
             <select value={status}
