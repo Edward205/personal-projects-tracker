@@ -53,8 +53,8 @@ export default function App() {
     setTheme(updated);
     document.documentElement.dataset.theme = updated;
   }
-  async function handleAdd(task) {
-    const created = await createProject(task);
+  async function handleAdd(project) {
+    const created = await createProject(project);
     setProjects((prev) => [...prev, created]);
   }
 
