@@ -2,18 +2,6 @@ body {
     margin: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-header * {
-    margin: 12px;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(94, 188, 255);
-}
-header p {
-    font-style: italic;
-}
 
 button, select {
     border-style: solid;
@@ -27,5 +15,12 @@ button, select {
         header {
             background-color: rgb(10, 83, 136);
         }
+        a {
+            color: rgb(109, 189, 254);
+        }
     }
+}
+
+a {
+    color: rgb(10, 102, 177);
 }

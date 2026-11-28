@@ -15,12 +15,15 @@
 }
 .panel label {
     display: block;
-    padding: 4px 0;
 }
 .panel.add button {
     width: 100%;
     margin-top: 12px;
     padding: 4px;
+}
+
+.panel.add h2 {
+    margin: 8px 4px;
 }
 
 @media (max-width: 768px) {

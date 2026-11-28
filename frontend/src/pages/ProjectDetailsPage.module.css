@@ -1,0 +1,17 @@
+dt {
+    font-weight: bold;
+}
+dd {
+    margin-bottom: 8px;
+}
+.panel {
+    margin: auto;
+    margin-top: 16px;
+    width: 500px;
+}
+@media (max-width: 768px) {
+    .panel {
+        width: auto;
+        margin: 16px;
+    }
+}

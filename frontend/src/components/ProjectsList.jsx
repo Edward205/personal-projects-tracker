@@ -11,7 +11,7 @@ export default function ProjectsList({projects, onDelete, onStatusChange}) {
         return (
             <section className={styles.list}>
                 <h2>My Projects</h2>
-                <p><b>{projects.length}</b> projects, <b>{active}</b> active</p>
+                <p className={styles.count}><b>{projects.length}</b> projects, <b>{active}</b> active</p>
                 <ul className={styles.list}>{cards}</ul>
             </section>
         );

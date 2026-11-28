@@ -1,0 +1,9 @@
+.projectform * {
+    margin: 8px 4px 0px 4px;
+}
+.projectform button {
+    margin: 0;
+}
+.projectform textarea {
+    margin: 4px;
+}

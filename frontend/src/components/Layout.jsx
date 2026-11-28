@@ -18,12 +18,12 @@ export default function Layout() {
         <>
             <header className={styles.header}>
                 
-                <span><h1>Personal Projects Tracker</h1>Work with your future self</span>
+                <span className={styles.name}><h1>Personal Projects Tracker</h1><p className={styles.slogan}>Work with your future self</p></span>
                 <nav className={styles.nav} data-testid="nav">
                     <NavLink to="/" end className={navClass}>Projects</NavLink>
                     <NavLink to="/about" className={navClass}>About</NavLink>
+                    <button onClick={handleTheme}>Theme</button>
                 </nav>
-                <button onClick={handleTheme}>Theme</button>
             </header>
             <main className={styles.main}>
                 <Outlet />

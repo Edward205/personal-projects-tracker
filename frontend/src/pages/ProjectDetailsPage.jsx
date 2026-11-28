@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { fetchProject } from "../api.js";
 import { STATUS_LABELS } from "../constants.js";
 import styles from "./ProjectDetailsPage.module.css";
+import projectsStyles from "./ProjectsPage.module.css";
 export default function ProjectDetailsPage() {
     const { id } = useParams();
     const [project, setProject] = useState(null);
@@ -45,11 +46,11 @@ export default function ProjectDetailsPage() {
         );
     }
     return (
-        <section className={`panel ${styles.detail}`} data-testid="detail">
+        <section className={`${projectsStyles.panel} ${styles.panel}`}>
             <Link to="/" className={styles.back}>
                 Back to list
             </Link>
-            <h2 className={project.gata ? styles.done : undefined} data-testid="detail-title">
+            <h2>
                 {project.titlu}
             </h2>
             <dl className={styles.fields}>

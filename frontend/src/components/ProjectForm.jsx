@@ -1,28 +1,29 @@
 import { useState } from "react";
-// ADAPT: câmpurile și valorile fixe ale temei proprii.
+import styles from "./ProjectForm.module.css";
+
 const STATUSES = [
     { value: "active", label: "Active" },
     { value: "done", label: "Done" },
     { value: "dead", label: "Dead" },
 ];
-const TITLU_MAX = 100;
+const MAX_TITLE = 100;
 export default function ProjectForm({ onAdd }) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [status, setStatus] = useState("active");
-    const [eroare, setError] = useState("");
+    const [error, setError] = useState("");
     const [send, setSend] = useState(false);
-    function valideaza() {
+    function validate() {
         const t = title.trim();
         if (t === "") return "Title can't be blank.";
-        if (t.length > TITLU_MAX) return `TItle must have at most ${TITLU_MAX} characters.`;
+        if (t.length > MAX_TITLE) return `TItle must have at most ${MAX_TITLE} characters.`;
         return "";
     }
     async function handleSubmit(e) {
         e.preventDefault();
-        const mesaj = valideaza();
-        if (mesaj) {
-            setError(mesaj);
+        const msg = validate();
+        if (msg) {
+            setError(msg);
             return;
         }
         setError("");
@@ -39,15 +40,15 @@ export default function ProjectForm({ onAdd }) {
         }
     }
     return (
-        <form className="project-form" onSubmit={handleSubmit} noValidate data-
+        <form className={styles.projectform} onSubmit={handleSubmit} noValidate data-
             testid="form">
 
             <label>Title</label>
             <input type="text" name="title" placeholder="Change the world..." value={title}
-                onChange={(e) => setTitle(e.target.value)} maxLength={TITLU_MAX}
-                aria-invalid={Boolean(eroare)}></input>
+                onChange={(e) => setTitle(e.target.value)} maxLength={MAX_TITLE}
+                aria-invalid={Boolean(error)}></input>
             <label>Notes</label>
-            <textarea rows="5" cols="30" id="description" value={description}
+            <textarea rows="5" cols="28" id="description" value={description}
                 onChange={(e) => setDescription(e.target.value)}></textarea>
 
             <label>Status</label>
@@ -60,9 +61,9 @@ export default function ProjectForm({ onAdd }) {
                 ))}
             </select>
 
-            {eroare && (
+            {error && (
                 <p className="status" data-testid="form-status">
-                    {eroare}
+                    {error}
                 </p>
             )}
             <button type="submit" disabled={send} data-testid="form-submit">

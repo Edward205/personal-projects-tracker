@@ -1,5 +1,29 @@
 .active {
-    border-style: dotted;
-    border-width: 0 0 1px 0;
-    border-color: white;
+    font-weight: bolder;
+}
+header * {
+    margin: 12px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(94, 188, 255);
+}
+header p {
+    font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .name {
+        margin: 0;
+    }
+    .nav {
+        margin: 0;
+    }
 }
